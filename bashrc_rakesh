@@ -740,9 +740,90 @@ function pull() {
     cd ~/git_hub    
 }
 
+function status() {
+    echo "------------------------------------------------------"
+    echo "Checking statuf of IntroductioToAlgorithms"
+    cd ~/git_hub/IntroductionToAlgorithmsCLRS
+    git status
+    echo "------------------------------------------------------"
+
+    echo "------------------------------------------------------"
+    echo "Checking statuf of ProjectEuler"
+    cd ~/git_hub/ProjectEuler
+    git status
+    echo "------------------------------------------------------"
+
+    echo "------------------------------------------------------"
+    echo "Checking statuf of DiscreteMathematicsAndItsApplications"
+    cd ~/git_hub/DiscreteMathematicsAndItsApplications
+    git status
+    echo "------------------------------------------------------"
+
+    echo "------------------------------------------------------"
+    echo "Checking statuf of LeetCode"
+    cd ~/git_hub/LeetCode
+    git status
+    echo "------------------------------------------------------"
+
+    echo "------------------------------------------------------"
+    echo "Checking statuf of Algorithms"
+    cd ~/git_hub/Algorithms
+    git status
+    echo "------------------------------------------------------"
+
+    echo "------------------------------------------------------"
+    echo "Checking statuf of HackerRank"
+    cd ~/git_hub/HackerRank
+    git status
+    echo "------------------------------------------------------"
+
+    echo "------------------------------------------------------"
+    echo "Checking statuf of CodeChef"
+    cd ~/git_hub/CodeChef
+    git status
+    echo "------------------------------------------------------"
+
+    echo "------------------------------------------------------"
+    echo "Checking statuf of TopCoder"
+    cd ~/git_hub/TopCoder
+    git status
+    echo "------------------------------------------------------"
+
+    echo "------------------------------------------------------"
+    echo "Checking statuf of CodeForces"
+    cd ~/git_hub/CodeForces
+    git status
+    echo "------------------------------------------------------"
+
+    echo "------------------------------------------------------"
+    echo "Checking statuf of Utility"
+    cd ~/git_hub/Utility
+    git status
+    echo "------------------------------------------------------"
+
+    echo "------------------------------------------------------"
+    echo "Checking statuf of SPOJ"
+    cd ~/git_hub/SPOJ
+    git status
+    echo "------------------------------------------------------"
+
+    echo "------------------------------------------------------"
+    echo "Checking statuf of Enviorenment"
+    cd ~/git_hub/Enviorenment
+    git status
+    cd ~/git_hub
+    echo "------------------------------------------------------"
+}
+
 function git_config() {
     git config --global user.email "cpp.rakesh@gmail.com"
     git config --global user.name "Rakesh Kumar"   
+}
+
+function push() {
+    git add *
+    git commit -m $1
+    git push
 }
 
 function set_prompt() {
