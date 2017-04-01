@@ -710,33 +710,62 @@ function clone() {
     git clone git@github.com:cpp-rakesh/Utility.git
     git clone git@github.com:cpp-rakesh/SPOJ.git
     git clone git@github.com:cpp-rakesh/Enviorenment.git
+    git clone git@github.com:cpp-rakesh/Kattis.git
 }
 
 function pull() {
     cd ~/git_hub/IntroductionToAlgorithmsCLRS
+    echo "***        Introduction to Algorithms          ***"
     git pull
+    
     cd ~/git_hub/ProjectEuler
-    git pull    
+    echo "***                Project Euler               ***"
+    git pull
+    
     cd ~/git_hub/DiscreteMathematicsAndItsApplications
+    echo "*** Discrete Mathematics And It's Applications ***"
     git pull    
+
     cd ~/git_hub/LeetCode
-    git pull    
+    echo "***                 Leet Code                  ***"
+    git pull
+    
     cd ~/git_hub/Algorithms
-    git pull    
+    echo "***                Algortithms                 ***"
+    git pull
+    
     cd ~/git_hub/HackerRank
-    git pull    
+    echo "***                Hacker Rank                 ***"
+    git pull
+    
     cd ~/git_hub/CodeChef
-    git pull    
+    echo "***                 Code Chef                  ***"
+    git pull
+    
     cd ~/git_hub/TopCoder
-    git pull    
+    echo "***                Top Coder                   ***"
+    git pull
+    
     cd ~/git_hub/CodeForces
+    echo "***              Code Forces                   ***"
     git pull
+    
     cd ~/git_hub/Utility
+    echo "***                Utility                     ***"
     git pull
+    
     cd ~/git_hub/SPOJ
+    echo "***                  SPOJ                      ***"
     git pull
+    
     cd ~/git_hub/Enviorenment
+    echo "***               Enviorenment                 ***"
     git pull
+    
+    cd ~/git_hub/Kattis
+    echo "***                 Kattis                     ***"
+    git pull
+    
     cd ~/git_hub    
 }
 
