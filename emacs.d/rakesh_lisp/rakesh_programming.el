@@ -60,3 +60,8 @@
 (define-key ggtags-mode-map (kbd "C-c g c") 'ggtags-create-tags)
 (define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
 (define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
+
+;; auto pair settings for pairing up the braces
+(require 'autopair)
+(autopair-global-mode 1)
+(setq autopair-autowrap t)
