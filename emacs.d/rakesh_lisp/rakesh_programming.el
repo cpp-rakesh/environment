@@ -61,6 +61,14 @@
 (define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
 (define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
 
+;; auto complete feature
+(defun auto-complete-for-go ()
+  (auto-complete-mode 1))
+(add-hook 'go-mode-hook 'auto-complete-for-go)
+
+(with-eval-after-load 'go-mode
+     (require 'go-autocomplete))
+
 ;; auto pair settings for pairing up the braces
 (require 'autopair)
 (autopair-global-mode 1)
