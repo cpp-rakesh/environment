@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
-      *) return;;
+    *) return;;
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -47,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+	    # We have color support; assume it's compliant with Ecma-48
+	    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	    # a case would tend to support setf rather than setaf.)
+	    color_prompt=yes
     else
-	color_prompt=
+	    color_prompt=
     fi
 fi
 
@@ -65,11 +65,11 @@ unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
+    xterm*|rxvt*)
+        PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+        ;;
+    *)
+        ;;
 esac
 
 # enable color support of ls and also add handy aliases
@@ -109,11 +109,11 @@ fi
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
 fi
 
 
@@ -353,52 +353,52 @@ alias lt='javaws /home/rocky/rocky/code_env/ContestAppletProd.jnlp'
 # Use the best version of pico installed
 edit() {
     if [ "$(type -t jpico)" = "file" ]; then
-	# Use JOE text editor http://joe-editor.sourceforge.net/
-	jpico -nonotice -linums -nobackups "$@"
+	    # Use JOE text editor http://joe-editor.sourceforge.net/
+	    jpico -nonotice -linums -nobackups "$@"
     elif [ "$(type -t nano)" = "file" ]; then
-	nano -c "$@"
+	    nano -c "$@"
     elif [ "$(type -t pico)" = "file" ]; then
-	pico "$@"
+	    pico "$@"
     else
-	vim "$@"
+	    vim "$@"
     fi
 }
 
 sedit() {
     if [ "$(type -t jpico)" = "file" ]; then
-	# Use JOE text editor http://joe-editor.sourceforge.net/
-	sudo jpico -nonotice -linums -nobackups "$@"
+	    # Use JOE text editor http://joe-editor.sourceforge.net/
+	    sudo jpico -nonotice -linums -nobackups "$@"
     elif [ "$(type -t nano)" = "file" ]; then
-	sudo nano -c "$@"
+	    sudo nano -c "$@"
     elif [ "$(type -t pico)" = "file" ]; then
-	sudo pico "$@"
+	    sudo pico "$@"
     else
-	sudo vim "$@"
+	    sudo vim "$@"
     fi
 }
 
 # Extracts any archive(s) (if unp isn't installed)
 extract() {
     for archive in $*; do
-	if [ -f $archive ] ; then
-	    case $archive in
-		*.tar.bz2)   tar xvjf $archive    ;;
-		*.tar.gz)    tar xvzf $archive    ;;
-		*.tar.xz)    tar xf   $archive    ;;                
-		*.bz2)       bunzip2 $archive     ;;
-		*.rar)       rar x $archive       ;;
-		*.gz)        gunzip $archive      ;;
-		*.tar)       tar xvf $archive     ;;
-		*.tbz2)      tar xvjf $archive    ;;
-		*.tgz)       tar xvzf $archive    ;;
-		*.zip)       unzip $archive       ;;
-		*.Z)         uncompress $archive  ;;
-		*.7z)        7z x $archive        ;;
-		*)           echo "don't know how to extract '$archive'..." ;;
-	    esac
-	else
-	    echo "'$archive' is not a valid file!"
-	fi
+	    if [ -f $archive ] ; then
+	        case $archive in
+		        *.tar.bz2)   tar xvjf $archive    ;;
+		        *.tar.gz)    tar xvzf $archive    ;;
+		        *.tar.xz)    tar xf   $archive    ;;
+		        *.bz2)       bunzip2 $archive     ;;
+		        *.rar)       rar x $archive       ;;
+		        *.gz)        gunzip $archive      ;;
+		        *.tar)       tar xvf $archive     ;;
+		        *.tbz2)      tar xvjf $archive    ;;
+		        *.tgz)       tar xvzf $archive    ;;
+		        *.zip)       unzip $archive       ;;
+		        *.Z)         uncompress $archive  ;;
+		        *.7z)        7z x $archive        ;;
+		        *)           echo "don't know how to extract '$archive'..." ;;
+	        esac
+	    else
+	        echo "'$archive' is not a valid file!"
+	    fi
     done
 }
 
@@ -418,7 +418,7 @@ ftext() {
 cpp() {
     set -e
     strace -q -ewrite cp -- "${1}" "${2}" 2>&1 \
-	| awk '{
+	    | awk '{
 	count += $NF
 	if (count % 10 == 0) {
 		percent = count / total_size * 100
@@ -437,18 +437,18 @@ cpp() {
 # Copy and go to the directory
 cpg () {
     if [ -d "$2" ];then
-	cp $1 $2 && cd $2
+	    cp $1 $2 && cd $2
     else
-	cp $1 $2
+	    cp $1 $2
     fi
 }
 
 # Move and go to the directory
 mvg () {
     if [ -d "$2" ];then
-	mv $1 $2 && cd $2
+	    mv $1 $2 && cd $2
     else
-	mv $1 $2
+	    mv $1 $2
     fi
 }
 
@@ -464,11 +464,11 @@ up () {
     limit=$1
     for ((i=1 ; i <= limit ; i++))
     do
-	d=$d/..
+	    d=$d/..
     done
     d=$(echo $d | sed 's/^\///')
     if [ -z "$d" ]; then
-	d=..
+	    d=..
     fi
     cd $d
 }
@@ -493,36 +493,36 @@ distribution() {
     local dtype
     # Assume unknown
     dtype="unknown"
-    
+
     # First test against Fedora / RHEL / CentOS / generic Redhat derivative
     if [ -r /etc/rc.d/init.d/functions ]; then
-	source /etc/rc.d/init.d/functions
-	[ zz`type -t passed 2>/dev/null` == "zzfunction" ] && dtype="redhat"
-	
-	# Then test against SUSE (must be after Redhat,
-	# I've seen rc.status on Ubuntu I think? TODO: Recheck that)
-    elif [ -r /etc/rc.status ]; then
-	source /etc/rc.status
-	[ zz`type -t rc_reset 2>/dev/null` == "zzfunction" ] && dtype="suse"
-	
-	# Then test against Debian, Ubuntu and friends
-    elif [ -r /lib/lsb/init-functions ]; then
-	source /lib/lsb/init-functions
-	[ zz`type -t log_begin_msg 2>/dev/null` == "zzfunction" ] && dtype="debian"
-	
-	# Then test against Gentoo
-    elif [ -r /etc/init.d/functions.sh ]; then
-	source /etc/init.d/functions.sh
-	[ zz`type -t ebegin 2>/dev/null` == "zzfunction" ] && dtype="gentoo"
-	
-	# For Mandriva we currently just test if /etc/mandriva-release exists
-	# and isn't empty (TODO: Find a better way :)
-    elif [ -s /etc/mandriva-release ]; then
-	dtype="mandriva"
+	    source /etc/rc.d/init.d/functions
+	    [ zz`type -t passed 2>/dev/null` == "zzfunction" ] && dtype="redhat"
 
-	# For Slackware we currently just test if /etc/slackware-version exists
+	    # Then test against SUSE (must be after Redhat,
+	    # I've seen rc.status on Ubuntu I think? TODO: Recheck that)
+    elif [ -r /etc/rc.status ]; then
+	    source /etc/rc.status
+	    [ zz`type -t rc_reset 2>/dev/null` == "zzfunction" ] && dtype="suse"
+
+	    # Then test against Debian, Ubuntu and friends
+    elif [ -r /lib/lsb/init-functions ]; then
+	    source /lib/lsb/init-functions
+	    [ zz`type -t log_begin_msg 2>/dev/null` == "zzfunction" ] && dtype="debian"
+
+	    # Then test against Gentoo
+    elif [ -r /etc/init.d/functions.sh ]; then
+	    source /etc/init.d/functions.sh
+	    [ zz`type -t ebegin 2>/dev/null` == "zzfunction" ] && dtype="gentoo"
+
+	    # For Mandriva we currently just test if /etc/mandriva-release exists
+	    # and isn't empty (TODO: Find a better way :)
+    elif [ -s /etc/mandriva-release ]; then
+	    dtype="mandriva"
+
+	    # For Slackware we currently just test if /etc/slackware-version exists
     elif [ -s /etc/slackware-version ]; then
-	dtype="slackware"
+	    dtype="slackware"
 
     fi
     echo $dtype
@@ -534,29 +534,29 @@ ver() {
     dtype=$(distribution)
 
     if [ $dtype == "redhat" ]; then
-	if [ -s /etc/redhat-release ]; then
-	    cat /etc/redhat-release && uname -a
-	else
-	    cat /etc/issue && uname -a
-	fi
+	    if [ -s /etc/redhat-release ]; then
+	        cat /etc/redhat-release && uname -a
+	    else
+	        cat /etc/issue && uname -a
+	    fi
     elif [ $dtype == "suse" ]; then
-	cat /etc/SuSE-release
+	    cat /etc/SuSE-release
     elif [ $dtype == "debian" ]; then
-	lsb_release -a
-	# sudo cat /etc/issue && sudo cat /etc/issue.net && sudo cat /etc/lsb_release && sudo cat /etc/os-release # Linux Mint option 2
+	    lsb_release -a
+	    # sudo cat /etc/issue && sudo cat /etc/issue.net && sudo cat /etc/lsb_release && sudo cat /etc/os-release # Linux Mint option 2
     elif [ $dtype == "gentoo" ]; then
-	cat /etc/gentoo-release
+	    cat /etc/gentoo-release
     elif [ $dtype == "mandriva" ]; then
-	cat /etc/mandriva-release
+	    cat /etc/mandriva-release
     elif [ $dtype == "slackware" ]; then
-	cat /etc/slackware-version
+	    cat /etc/slackware-version
     else
-	if [ -s /etc/issue ]; then
-	    cat /etc/issue
-	else
-	    echo "Error: Unknown distribution"
-	    exit 1
-	fi
+	    if [ -s /etc/issue ]; then
+	        cat /etc/issue
+	    else
+	        echo "Error: Unknown distribution"
+	        exit 1
+	    fi
     fi
 }
 
@@ -566,25 +566,25 @@ install_bashrc_support() {
     dtype=$(distribution)
 
     if [ $dtype == "redhat" ]; then
-	sudo yum install multitail tree joe
+	    sudo yum install multitail tree joe
     elif [ $dtype == "suse" ]; then
-	sudo zypper install multitail
-	sudo zypper install tree
-	sudo zypper install joe
+	    sudo zypper install multitail
+	    sudo zypper install tree
+	    sudo zypper install joe
     elif [ $dtype == "debian" ]; then
-	sudo apt-get install multitail tree joe
+	    sudo apt-get install multitail tree joe
     elif [ $dtype == "gentoo" ]; then
-	sudo emerge multitail
-	sudo emerge tree
-	sudo emerge joe
+	    sudo emerge multitail
+	    sudo emerge tree
+	    sudo emerge joe
     elif [ $dtype == "mandriva" ]; then
-	sudo urpmi multitail
-	sudo urpmi tree
-	sudo urpmi joe
+	    sudo urpmi multitail
+	    sudo urpmi tree
+	    sudo urpmi joe
     elif [ $dtype == "slackware" ]; then
-	echo "No install support for Slackware"
+	    echo "No install support for Slackware"
     else
-	echo "Unknown distribution"
+	    echo "Unknown distribution"
     fi
 }
 
@@ -617,71 +617,71 @@ function whatsmyip() {
 # View Apache logs
 apachelog() {
     if [ -f /etc/httpd/conf/httpd.conf ]; then
-	cd /var/log/httpd && ls -xAh && multitail --no-repeat -c -s 2 /var/log/httpd/*_log
+	    cd /var/log/httpd && ls -xAh && multitail --no-repeat -c -s 2 /var/log/httpd/*_log
     else
-	cd /var/log/apache2 && ls -xAh && multitail --no-repeat -c -s 2 /var/log/apache2/*.log
+	    cd /var/log/apache2 && ls -xAh && multitail --no-repeat -c -s 2 /var/log/apache2/*.log
     fi
 }
 
 # Edit the Apache configuration
 apacheconfig() {
     if [ -f /etc/httpd/conf/httpd.conf ]; then
-	sedit /etc/httpd/conf/httpd.conf
+	    sedit /etc/httpd/conf/httpd.conf
     elif [ -f /etc/apache2/apache2.conf ]; then
-	sedit /etc/apache2/apache2.conf
+	    sedit /etc/apache2/apache2.conf
     else
-	echo "Error: Apache config file could not be found."
-	echo "Searching for possible locations:"
-	sudo updatedb && locate httpd.conf && locate apache2.conf
+	    echo "Error: Apache config file could not be found."
+	    echo "Searching for possible locations:"
+	    sudo updatedb && locate httpd.conf && locate apache2.conf
     fi
 }
 
 # Edit the PHP configuration file
 phpconfig() {
     if [ -f /etc/php.ini ]; then
-	sedit /etc/php.ini
+	    sedit /etc/php.ini
     elif [ -f /etc/php/php.ini ]; then
-	sedit /etc/php/php.ini
+	    sedit /etc/php/php.ini
     elif [ -f /etc/php5/php.ini ]; then
-	sedit /etc/php5/php.ini
+	    sedit /etc/php5/php.ini
     elif [ -f /usr/bin/php5/bin/php.ini ]; then
-	sedit /usr/bin/php5/bin/php.ini
+	    sedit /usr/bin/php5/bin/php.ini
     elif [ -f /etc/php5/apache2/php.ini ]; then
-	sedit /etc/php5/apache2/php.ini
+	    sedit /etc/php5/apache2/php.ini
     else
-	echo "Error: php.ini file could not be found."
-	echo "Searching for possible locations:"
-	sudo updatedb && locate php.ini
+	    echo "Error: php.ini file could not be found."
+	    echo "Searching for possible locations:"
+	    sudo updatedb && locate php.ini
     fi
 }
 
 # Edit the MySQL configuration file
 mysqlconfig() {
     if [ -f /etc/my.cnf ]; then
-	sedit /etc/my.cnf
+	    sedit /etc/my.cnf
     elif [ -f /etc/mysql/my.cnf ]; then
-	sedit /etc/mysql/my.cnf
+	    sedit /etc/mysql/my.cnf
     elif [ -f /usr/local/etc/my.cnf ]; then
-	sedit /usr/local/etc/my.cnf
+	    sedit /usr/local/etc/my.cnf
     elif [ -f /usr/bin/mysql/my.cnf ]; then
-	sedit /usr/bin/mysql/my.cnf
+	    sedit /usr/bin/mysql/my.cnf
     elif [ -f ~/my.cnf ]; then
-	sedit ~/my.cnf
+	    sedit ~/my.cnf
     elif [ -f ~/.my.cnf ]; then
-	sedit ~/.my.cnf
+	    sedit ~/.my.cnf
     else
-	echo "Error: my.cnf file could not be found."
-	echo "Searching for possible locations:"
-	sudo updatedb && locate my.cnf
+	    echo "Error: my.cnf file could not be found."
+	    echo "Searching for possible locations:"
+	    sudo updatedb && locate my.cnf
     fi
 }
 
 # For some reason, rot13 pops up everywhere
 rot13() {
     if [ $# -eq 0 ]; then
-	tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
+	    tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
     else
-	echo $* | tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
+	    echo $* | tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
     fi
 }
 
@@ -712,62 +712,67 @@ function clone() {
     git clone git@github.com:cpp-rakesh/SPOJ.git
     git clone git@github.com:cpp-rakesh/Enviorenment.git
     git clone git@github.com:cpp-rakesh/Kattis.git
+    git clone git@github.com:cpp-rakesh/Codility.git
 }
 
 function pull() {
     cd ~/git_hub/IntroductionToAlgorithmsCLRS
     echo "***        Introduction to Algorithms          ***"
     git pull
-    
+
     cd ~/git_hub/ProjectEuler
     echo "***                Project Euler               ***"
     git pull
-    
+
     cd ~/git_hub/DiscreteMathematicsAndItsApplications
     echo "*** Discrete Mathematics And It's Applications ***"
-    git pull    
+    git pull
 
     cd ~/git_hub/LeetCode
     echo "***                 Leet Code                  ***"
     git pull
-    
+
     cd ~/git_hub/Algorithms
     echo "***                Algortithms                 ***"
     git pull
-    
+
     cd ~/git_hub/HackerRank
     echo "***                Hacker Rank                 ***"
     git pull
-    
+
     cd ~/git_hub/CodeChef
     echo "***                 Code Chef                  ***"
     git pull
-    
+
     cd ~/git_hub/TopCoder
     echo "***                Top Coder                   ***"
     git pull
-    
+
     cd ~/git_hub/CodeForces
     echo "***              Code Forces                   ***"
     git pull
-    
+
     cd ~/git_hub/Utility
     echo "***                Utility                     ***"
     git pull
-    
+
     cd ~/git_hub/SPOJ
     echo "***                  SPOJ                      ***"
     git pull
-    
+
     cd ~/git_hub/Enviorenment
     echo "***               Enviorenment                 ***"
     git pull
-    
+
     cd ~/git_hub/Kattis
     echo "***                 Kattis                     ***"
     git pull
-    
-    cd ~/git_hub    
+
+    cd ~/git_hub/Codility
+    echo "***                 Codility                   ***"
+    git pull
+
+    cd ~/git_hub
 }
 
 function status() {
@@ -843,11 +848,18 @@ function status() {
     git status
     cd ~/git_hub
     echo "------------------------------------------------------"
+
+    echo "------------------------------------------------------"
+    echo "Checking statuf of Codility"
+    cd ~/git_hub/Codility
+    git status
+    cd ~/git_hub
+    echo "------------------------------------------------------"
 }
 
 function git_config() {
     git config --global user.email "cpp.rakesh@gmail.com"
-    git config --global user.name "Rakesh Kumar"   
+    git config --global user.name "Rakesh Kumar"
 }
 
 function push() {
