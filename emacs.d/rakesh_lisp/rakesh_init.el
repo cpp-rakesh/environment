@@ -25,7 +25,7 @@
 
 ;; line number and its formatting
 (global-linum-mode t)
-(setq linum-format "%d|  ")
+(setq linum-format "%4d|  ")
 
 ;; Set up the keyboard so the <delete> key on both the regular keyboard
 ;; and the keypad delete the character under the cursor and to the right
