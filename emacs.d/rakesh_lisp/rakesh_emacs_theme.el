@@ -13,8 +13,9 @@
 
 ;; Try using MELPA color theme.
 ;; White Background themes
-(load-theme 'leuven t)
+;;(load-theme 'leuven t)
 ;;(load-theme 'solarized-light t)
+(load-theme 'intellij t)
 
 ;; Black background themes
 ;;(load-theme 'zenburn t)
