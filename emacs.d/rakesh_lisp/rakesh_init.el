@@ -5,13 +5,6 @@
 ;; 27/10/2017
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Add packages
-(require 'package) ;; You might already have this line
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(package-initialize) ;; You might already have this line
-(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
-(package-initialize) ;; You might already have this line
-
 ;; Because most of the time I use white background and black text
 ;; Therefore I need this to use light emacs themes
 ;; Force background color to white for Snow Leopard
