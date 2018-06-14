@@ -5,6 +5,13 @@
 ;; 27/10/2017
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Add packages
+(require 'package) ;; You might already have this line
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize) ;; You might already have this line
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
+(package-initialize) ;; You might already have this line
+
 ;; Because most of the time I use white background and black text
 ;; Therefore I need this to use light emacs themes
 ;; Force background color to white for Snow Leopard
@@ -19,6 +26,9 @@
 ;; line number and its formatting
 (global-linum-mode t)
 (setq linum-format "%4d|  ")
+
+;; Column mode
+(setq column-number-mode t)
 
 ;; Set up the keyboard so the <delete> key on both the regular keyboard
 ;; and the keypad delete the character under the cursor and to the right

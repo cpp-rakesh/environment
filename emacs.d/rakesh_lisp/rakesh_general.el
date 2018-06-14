@@ -19,6 +19,10 @@
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
+;; buffer switching
+(ido-mode 1)
+(setq ido-separator "\n")
+
 ;; some dired settings
 (setq dired-recursive-copies 'always)
 (setq dired-recursive-deletes 'always)
