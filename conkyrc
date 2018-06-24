@@ -16,8 +16,8 @@ text_buffer_size 2048
 
 gap_x 10
 gap_y 30
-minimum_size 250 450
-maximum_width 450
+minimum_size  450
+maximum_width 650
 own_window yes
 own_window_type override
 own_window_transparent yes
@@ -51,18 +51,37 @@ color9 FFFFFF
 
 TEXT
 ${color1}${font :Bold:size=10} $alignc For the love of Mathematics and Computer Science ${color} ${hr 3}
+
+
+
+
+
+
+
+
+
 ${color1}
-${color0}${font :Bold:size=14} $alignc Adwita
+${color0}${font :Bold:size=14} $alignr Adwita
 ${color1}
-${color9}${font :Bold:size=14} $alignc ${time %H}:${time %M}
-${color}${font :Bold:size=14} $alignc ${time %h} ${time %e} - ${time %Y}${font :Bold:size=08}
-$alignc(${time %A})
-${color8}$alignc Uptime: $uptime
+#${color9}${font :Bold:size=14} $alignr ${time %H}:${time %M}:${time %S}
+${alignr}${font arial:Bold:size=14}${tztime Australia/West %H:%M:%S}${font}
+${color}${font :Bold:size=14} $alignr ${time %h} ${time %e} - ${time %Y}${font :Bold:size=08} 
+$alignr(${time %A})
+${color8}$alignr Uptime: $uptime
+
+
+
+
+
+
+
+
+
 ${color}$sysname $kernel $nodename    $machine
 ${color9}CPU & Memory $hr:
 ${color}CPU Usage:${color0}$alignr${cpubar 8,145} ${color1}$cpu%@${freq_g cpu}GHz
 
-${color1}${cpugraph 15,320 000000 ff0000}
+${color1}${cpugraph 15,520 000000 ff0000}
 ${color}RAM ${alignr}${color1}$mem / $memmax ($memperc%)
 ${color0}${membar 8}
 ${color}SWAP ${alignr}${color1}$swap / $swapmax ($swapperc%)
@@ -85,5 +104,5 @@ ${color4}Net:${color} ${alignr}${color7}IP: ${addr eth0}
 ${color3}Download: ${color2}${downspeed eth0} k/s ${alignr} $alignr${color3}Upload: ${color3} ${upspeed eth0} k/s
 ${color}${downspeedgraph eth0 15,140} ${alignr}${color}${upspeedgraph eth0 15,140}
 ${color7}Total Download: ${color2}${totaldown eth0} ${alignr}${color7}Total Upload: ${color3}${totalup eth0}
-${image ~/.conky/logo.png -p 10,30 -s 75x75}
+${image ~/.conky/adwita.png -p 0,30 -s 300x350}
 
