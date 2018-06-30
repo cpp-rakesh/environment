@@ -699,60 +699,60 @@ trim() {
 #######################################################
 
 function clone() {
-    git clone git@github.com:cpp-rakesh/IntroductionToAlgorithmsCLRS.git
-    git clone git@github.com:cpp-rakesh/ProjectEuler.git
-    git clone git@github.com:cpp-rakesh/DiscreteMathematicsAndItsApplications.git
-    git clone git@github.com:cpp-rakesh/LeetCode.git
-    git clone git@github.com:cpp-rakesh/Algorithms.git
-    git clone git@github.com:cpp-rakesh/HackerRank.git
-    git clone git@github.com:cpp-rakesh/CodeChef.git
-    git clone git@github.com:cpp-rakesh/TopCoder.git
-    git clone git@github.com:cpp-rakesh/CodeForces.git
-    git clone git@github.com:cpp-rakesh/Utility.git
+    git clone git@github.com:cpp-rakesh/introduction_to_algorithms_CLRS.git
+    git clone git@github.com:cpp-rakesh/project_euler.git
+    git clone git@github.com:cpp-rakesh/discrete_mathematics_and_its_applications.git
+    git clone git@github.com:cpp-rakesh/leet_code.git
+    git clone git@github.com:cpp-rakesh/algorithms.git
+    git clone git@github.com:cpp-rakesh/hacker_rank.git
+    git clone git@github.com:cpp-rakesh/code_chef.git
+    git clone git@github.com:cpp-rakesh/top_coder.git
+    git clone git@github.com:cpp-rakesh/code_forces.git
+    git clone git@github.com:cpp-rakesh/utility.git
     git clone git@github.com:cpp-rakesh/SPOJ.git
-    git clone git@github.com:cpp-rakesh/Enviorenment.git
-    git clone git@github.com:cpp-rakesh/Kattis.git
-    git clone git@github.com:cpp-rakesh/Codility.git
+    git clone git@github.com:cpp-rakesh/enviorenment.git
+    git clone git@github.com:cpp-rakesh/kattis.git
+    git clone git@github.com:cpp-rakesh/codility.git
 }
 
 function pull() {
-    cd ~/git_hub/IntroductionToAlgorithmsCLRS
+    cd ~/git_hub/introduction_to_algorithms_CLRS
     echo "***        Introduction to Algorithms          ***"
     git pull
 
-    cd ~/git_hub/ProjectEuler
+    cd ~/git_hub/project_euler
     echo "***                Project Euler               ***"
     git pull
 
-    cd ~/git_hub/DiscreteMathematicsAndItsApplications
+    cd ~/git_hub/discrete_mathematics_and_its_applications
     echo "*** Discrete Mathematics And It's Applications ***"
     git pull
 
-    cd ~/git_hub/LeetCode
+    cd ~/git_hub/leet_code
     echo "***                 Leet Code                  ***"
     git pull
 
-    cd ~/git_hub/Algorithms
+    cd ~/git_hub/algorithms
     echo "***                Algortithms                 ***"
     git pull
 
-    cd ~/git_hub/HackerRank
+    cd ~/git_hub/hacker_rank
     echo "***                Hacker Rank                 ***"
     git pull
 
-    cd ~/git_hub/CodeChef
+    cd ~/git_hub/code_chef
     echo "***                 Code Chef                  ***"
     git pull
 
-    cd ~/git_hub/TopCoder
+    cd ~/git_hub/top_coder
     echo "***                Top Coder                   ***"
     git pull
 
-    cd ~/git_hub/CodeForces
+    cd ~/git_hub/code_forces
     echo "***              Code Forces                   ***"
     git pull
 
-    cd ~/git_hub/Utility
+    cd ~/git_hub/utility
     echo "***                Utility                     ***"
     git pull
 
@@ -760,15 +760,15 @@ function pull() {
     echo "***                  SPOJ                      ***"
     git pull
 
-    cd ~/git_hub/Enviorenment
+    cd ~/git_hub/enviorenment
     echo "***               Enviorenment                 ***"
     git pull
 
-    cd ~/git_hub/Kattis
+    cd ~/git_hub/kattis
     echo "***                 Kattis                     ***"
     git pull
 
-    cd ~/git_hub/Codility
+    cd ~/git_hub/codility
     echo "***                 Codility                   ***"
     git pull
 
@@ -778,61 +778,61 @@ function pull() {
 function status() {
     echo "------------------------------------------------------"
     echo "Checking statuf of IntroductioToAlgorithms"
-    cd ~/git_hub/IntroductionToAlgorithmsCLRS
+    cd ~/git_hub/introduction_to_algorithms_CLRS
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
     echo "Checking statuf of ProjectEuler"
-    cd ~/git_hub/ProjectEuler
+    cd ~/git_hub/project_euler
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
     echo "Checking statuf of DiscreteMathematicsAndItsApplications"
-    cd ~/git_hub/DiscreteMathematicsAndItsApplications
+    cd ~/git_hub/discrete_mathematics_and_its_appplications
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
     echo "Checking statuf of LeetCode"
-    cd ~/git_hub/LeetCode
+    cd ~/git_hub/leet_code
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
     echo "Checking statuf of Algorithms"
-    cd ~/git_hub/Algorithms
+    cd ~/git_hub/algorithms
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
     echo "Checking statuf of HackerRank"
-    cd ~/git_hub/HackerRank
+    cd ~/git_hub/hacker_rank
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
     echo "Checking statuf of CodeChef"
-    cd ~/git_hub/CodeChef
+    cd ~/git_hub/code_chef
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
     echo "Checking statuf of TopCoder"
-    cd ~/git_hub/TopCoder
+    cd ~/git_hub/top_coder
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
     echo "Checking statuf of CodeForces"
-    cd ~/git_hub/CodeForces
+    cd ~/git_hub/code_forces
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
     echo "Checking statuf of Utility"
-    cd ~/git_hub/Utility
+    cd ~/git_hub/utility
     git status
     echo "------------------------------------------------------"
 
@@ -844,14 +844,14 @@ function status() {
 
     echo "------------------------------------------------------"
     echo "Checking statuf of Enviorenment"
-    cd ~/git_hub/Enviorenment
+    cd ~/git_hub/enviorenment
     git status
     cd ~/git_hub
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
     echo "Checking statuf of Codility"
-    cd ~/git_hub/Codility
+    cd ~/git_hub/codility
     git status
     cd ~/git_hub
     echo "------------------------------------------------------"
