@@ -174,12 +174,8 @@ if [[ $iatest > 0 ]]; then bind "set completion-ignore-case on"; fi
 if [[ $iatest > 0 ]]; then bind "set show-all-if-ambiguous On"; fi
 
 # Set the default editor
-export EDITOR=nano
-export VISUAL=nano
-alias pico='edit'
-alias spico='sedit'
-alias nano='edit'
-alias snano='sedit'
+export EDITOR=emacs
+export VISUAL=emacs
 
 # To have colors for ls and all grep commands such as grep, egrep and zgrep
 export CLICOLOR=1
@@ -202,9 +198,6 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # Alias's for SSH
 # alias SERVERNAME='ssh YOURWEBSITE.com -l USERNAME -p PORTNUMBERHERE'
 
-# Alias's to change the directory
-alias web='cd /var/www/html'
-
 # Alias's to mount ISO files
 # mount -o loop /home/NAMEOFISO.iso /home/ISOMOUNTDIR/
 # umount /home/NAMEOFISO.iso
@@ -219,12 +212,6 @@ alias web='cd /var/www/html'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Edit this .bashrc file
-alias ebrc='edit ~/.bashrc'
-
-# Show help for this .bashrc file
-alias hlp='less ~/.bashrc_help'
 
 # alias to show the date
 alias da='date "+%Y-%m-%d %A %T %Z"'
@@ -245,7 +232,6 @@ alias emacs='emacs -nw'
 
 # Alias's for configuration editing
 alias b='emacs ~/.bashrc'
-alias e='emacs ~/.emacs'
 
 # saving configuration
 alias s='. ~/.bashrc'
@@ -339,6 +325,7 @@ alias sha1='openssl sha1'
 ## Aliases for git hub
 alias gh='cd ~/git_hub'
 alias gd='git show --color --pretty=format:%b $COMMIT'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 ## Alias for g++
 alias g++='g++ -std=c++11'
@@ -349,33 +336,6 @@ alias lt='javaws /home/rocky/rocky/code_env/ContestAppletProd.jnlp'
 #######################################################
 # SPECIAL FUNCTIONS
 #######################################################
-
-# Use the best version of pico installed
-edit() {
-    if [ "$(type -t jpico)" = "file" ]; then
-	    # Use JOE text editor http://joe-editor.sourceforge.net/
-	    jpico -nonotice -linums -nobackups "$@"
-    elif [ "$(type -t nano)" = "file" ]; then
-	    nano -c "$@"
-    elif [ "$(type -t pico)" = "file" ]; then
-	    pico "$@"
-    else
-	    vim "$@"
-    fi
-}
-
-sedit() {
-    if [ "$(type -t jpico)" = "file" ]; then
-	    # Use JOE text editor http://joe-editor.sourceforge.net/
-	    sudo jpico -nonotice -linums -nobackups "$@"
-    elif [ "$(type -t nano)" = "file" ]; then
-	    sudo nano -c "$@"
-    elif [ "$(type -t pico)" = "file" ]; then
-	    sudo pico "$@"
-    else
-	    sudo vim "$@"
-    fi
-}
 
 # Extracts any archive(s) (if unp isn't installed)
 extract() {
@@ -612,77 +572,6 @@ function whatsmyip() {
 
     # External IP Lookup
     echo -n "External IP: " ; wget http://smart-ip.net/myip -O - -q
-}
-
-# View Apache logs
-apachelog() {
-    if [ -f /etc/httpd/conf/httpd.conf ]; then
-	    cd /var/log/httpd && ls -xAh && multitail --no-repeat -c -s 2 /var/log/httpd/*_log
-    else
-	    cd /var/log/apache2 && ls -xAh && multitail --no-repeat -c -s 2 /var/log/apache2/*.log
-    fi
-}
-
-# Edit the Apache configuration
-apacheconfig() {
-    if [ -f /etc/httpd/conf/httpd.conf ]; then
-	    sedit /etc/httpd/conf/httpd.conf
-    elif [ -f /etc/apache2/apache2.conf ]; then
-	    sedit /etc/apache2/apache2.conf
-    else
-	    echo "Error: Apache config file could not be found."
-	    echo "Searching for possible locations:"
-	    sudo updatedb && locate httpd.conf && locate apache2.conf
-    fi
-}
-
-# Edit the PHP configuration file
-phpconfig() {
-    if [ -f /etc/php.ini ]; then
-	    sedit /etc/php.ini
-    elif [ -f /etc/php/php.ini ]; then
-	    sedit /etc/php/php.ini
-    elif [ -f /etc/php5/php.ini ]; then
-	    sedit /etc/php5/php.ini
-    elif [ -f /usr/bin/php5/bin/php.ini ]; then
-	    sedit /usr/bin/php5/bin/php.ini
-    elif [ -f /etc/php5/apache2/php.ini ]; then
-	    sedit /etc/php5/apache2/php.ini
-    else
-	    echo "Error: php.ini file could not be found."
-	    echo "Searching for possible locations:"
-	    sudo updatedb && locate php.ini
-    fi
-}
-
-# Edit the MySQL configuration file
-mysqlconfig() {
-    if [ -f /etc/my.cnf ]; then
-	    sedit /etc/my.cnf
-    elif [ -f /etc/mysql/my.cnf ]; then
-	    sedit /etc/mysql/my.cnf
-    elif [ -f /usr/local/etc/my.cnf ]; then
-	    sedit /usr/local/etc/my.cnf
-    elif [ -f /usr/bin/mysql/my.cnf ]; then
-	    sedit /usr/bin/mysql/my.cnf
-    elif [ -f ~/my.cnf ]; then
-	    sedit ~/my.cnf
-    elif [ -f ~/.my.cnf ]; then
-	    sedit ~/.my.cnf
-    else
-	    echo "Error: my.cnf file could not be found."
-	    echo "Searching for possible locations:"
-	    sudo updatedb && locate my.cnf
-    fi
-}
-
-# For some reason, rot13 pops up everywhere
-rot13() {
-    if [ $# -eq 0 ]; then
-	    tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
-    else
-	    echo $* | tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
-    fi
 }
 
 # Trim leading and trailing spaces (for scripts)
