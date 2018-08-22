@@ -19,12 +19,6 @@
 (setq reftex-plug-into-AUCTeX t)
 (setq TeX-PDF-mode t)
 
-(require 'flymake)
-(defun flymake-get-tex-args (file-name)
-  (list "pdflatex"
-        (list "-file-line-error" "-draftmode" "-interaction=nonstopmode" file-name)))
-(add-hook 'LaTeX-mode-hook 'flymake-mode)
-
 (setq ispell-program-name "aspell") ; could be ispell as well, depending on your preferences
 (setq ispell-dictionary "english") ; this can obviously be set to any language your spell-checking program supports
 
