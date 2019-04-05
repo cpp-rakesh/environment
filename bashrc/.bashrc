@@ -491,6 +491,7 @@ function clone() {
     git clone git@github.com:cpp-rakesh/enviorenment.git
     git clone git@github.com:cpp-rakesh/kattis.git
     git clone git@github.com:cpp-rakesh/codility.git
+    git clone git@github.com:cpp-rakesh/code_wars.git
 }
 
 function pull() {
@@ -550,86 +551,97 @@ function pull() {
     echo "***                 Codility                   ***"
     git pull
 
+    cd ~/git_hub/code_wars
+    echo "***                 Code Wars                  ***"
+    git pull
+
     cd ~/git_hub
 }
 
 function status() {
     echo "------------------------------------------------------"
-    echo "Checking statuf of IntroductioToAlgorithms"
+    echo "Checking status of IntroductioToAlgorithms"
     cd ~/git_hub/introduction_to_algorithms_CLRS
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
-    echo "Checking statuf of ProjectEuler"
+    echo "Checking status of ProjectEuler"
     cd ~/git_hub/project_euler
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
-    echo "Checking statuf of DiscreteMathematicsAndItsApplications"
+    echo "Checking status of DiscreteMathematicsAndItsApplications"
     cd ~/git_hub/discrete_mathematics_and_its_appplications
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
-    echo "Checking statuf of LeetCode"
+    echo "Checking status of LeetCode"
     cd ~/git_hub/leet_code
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
-    echo "Checking statuf of Algorithms"
+    echo "Checking status of Algorithms"
     cd ~/git_hub/algorithms
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
-    echo "Checking statuf of HackerRank"
+    echo "Checking status of HackerRank"
     cd ~/git_hub/hacker_rank
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
-    echo "Checking statuf of CodeChef"
+    echo "Checking status of CodeChef"
     cd ~/git_hub/code_chef
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
-    echo "Checking statuf of TopCoder"
+    echo "Checking status of TopCoder"
     cd ~/git_hub/top_coder
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
-    echo "Checking statuf of CodeForces"
+    echo "Checking status of CodeForces"
     cd ~/git_hub/code_forces
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
-    echo "Checking statuf of Utility"
+    echo "Checking status of Utility"
     cd ~/git_hub/utility
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
-    echo "Checking statuf of SPOJ"
+    echo "Checking status of SPOJ"
     cd ~/git_hub/SPOJ
     git status
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
-    echo "Checking statuf of Enviorenment"
+    echo "Checking status of Enviorenment"
     cd ~/git_hub/enviorenment
     git status
     cd ~/git_hub
     echo "------------------------------------------------------"
 
     echo "------------------------------------------------------"
-    echo "Checking statuf of Codility"
+    echo "Checking status of Codility"
     cd ~/git_hub/codility
+    git status
+    cd ~/git_hub
+    echo "------------------------------------------------------"
+
+    echo "------------------------------------------------------"
+    echo "Checking status of Code Wars"
+    cd ~/git_hub/code_wars
     git status
     cd ~/git_hub
     echo "------------------------------------------------------"
