@@ -213,6 +213,7 @@ alias sha1='openssl sha1'
 
 ## Aliases for git hub
 alias gh='cd ~/git_hub'
+alias gb='git branch'
 alias gd='git show --color --pretty=format:%b $COMMIT'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
@@ -658,10 +659,6 @@ function push() {
     git push
 }
 
-function parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-
 function set_prompt() {
     #  Customize BASH PS1 prompt to show current GIT repository and branch.
 
@@ -750,7 +747,7 @@ function set_prompt() {
     NewLine="\n"
     Jobs="\j"
 
-    export PS1="[$BBlue\d$Color_Off --> $BRed\u$Color_Off@$BBlack\w$Color_Off$BBlue$(parse_git_branch)$Color_Off]: "
+    export PS1="[$BBlue\d$Color_Off --> $BRed\u$Color_Off@$BBlack\w$Color_Off$BBlue\$(__git_ps1)$Color_Off]: "
 }
 
 function friend_banner() {
