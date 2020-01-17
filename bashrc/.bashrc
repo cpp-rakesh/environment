@@ -658,6 +658,10 @@ function push() {
     git push
 }
 
+function parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
 function set_prompt() {
     #  Customize BASH PS1 prompt to show current GIT repository and branch.
 
@@ -746,8 +750,7 @@ function set_prompt() {
     NewLine="\n"
     Jobs="\j"
 
-    export PS1="[$BBlue\d$Color_Off --> $BRed\u$Color_Off@$BBlack\w$Color_Off]: "
-
+    export PS1="[$BBlue\d$Color_Off --> $BRed\u$Color_Off@$BBlack\w$Color_Off$BBlue$(parse_git_branch)$Color_Off]: "
 }
 
 function friend_banner() {
