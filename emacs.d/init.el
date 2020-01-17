@@ -11,4 +11,5 @@
 		 ))
     (mapc load-it (directory-files dir nil "\\.el$"))))
 
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (load-directory "~/.emacs.d/rakesh_lisp")
