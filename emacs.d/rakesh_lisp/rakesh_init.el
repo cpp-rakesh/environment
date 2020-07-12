@@ -50,6 +50,11 @@
 
 ;; do not make backup files
 (setq make-backup-files nil)
+(setq create-lockfiles nil)
+     (add-hook 'dired-load-hook
+               (lambda ()
+                 (require 'dired-x)))
+(add-hook 'dired-mode-hook 'dired-omit-toggle)
 
 ;; Setting the different keys
 (global-set-key (kbd "C-t") 'string-rectangle)
@@ -68,6 +73,9 @@
 (delete-selection-mode t)                                     ; Typed text replaces selection
 (global-subword-mode t)                                       ; Treat CamelCase as multiple words
 (auto-fill-mode t)                                            ; Automatically wrap lines
+
+;; This is for switching between window frames
+(global-set-key (kbd "C-x o") 'ace-window)
 
 ;; parenthisis highlight
 (show-paren-mode 1)
