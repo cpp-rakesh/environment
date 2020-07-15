@@ -80,3 +80,7 @@
 ;; parenthisis highlight
 (show-paren-mode 1)
 (setq show-paren-delay 0)
+
+;; key binding for magit start
+(global-set-key (kbd "C-x g") 'magit-status)
+

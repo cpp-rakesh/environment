@@ -53,13 +53,20 @@
             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
               (ggtags-mode 1))))
 
-(define-key ggtags-mode-map (kbd "C-c g s") 'ggtags-find-other-symbol)
-(define-key ggtags-mode-map (kbd "C-c g h") 'ggtags-view-tag-history)
-(define-key ggtags-mode-map (kbd "C-c g r") 'ggtags-find-reference)
-(define-key ggtags-mode-map (kbd "C-c g f") 'ggtags-find-file)
-(define-key ggtags-mode-map (kbd "C-c g c") 'ggtags-create-tags)
-(define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
-(define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
+(global-set-key (kbd "C-g") nil)
+(global-set-key (kbd "C-g g s") 'ggtags-find-other-symbol)
+(global-set-key (kbd "C-g g h") 'ggtags-view-tag-history)
+(global-set-key (kbd "C-g g r") 'ggtags-find-reference)
+(global-set-key (kbd "C-g g f") 'ggtags-find-file)
+(global-set-key (kbd "C-g g c") 'ggtags-create-tags)
+(global-set-key (kbd "C-g g u") 'ggtags-update-tags)
+(global-set-key (kbd "M-,") 'pop-tag-mark)
+
+;; ggtags: don't whack my useful key bindings!
+(eval-after-load 'ggtags
+  '(progn
+     (define-key ggtags-navigation-map (kbd "M-<") nil)
+     (define-key ggtags-navigation-map (kbd "M->") nil)))
 
 ;; auto complete feature
 (defun auto-complete-for-go ()
