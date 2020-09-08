@@ -308,36 +308,6 @@ mkdirg () {
     cd $1
 }
 
-# Goes up a specified number of directories  (i.e. up 4)
-up () {
-    local d=""
-    limit=$1
-    for ((i=1 ; i <= limit ; i++))
-    do
-	    d=$d/..
-    done
-    d=$(echo $d | sed 's/^\///')
-    if [ -z "$d" ]; then
-	    d=..
-    fi
-    cd $d
-}
-
-#Automatically do an ls after each cd
-# cd ()
-# {
-# 	if [ -n "$1" ]; then
-# 		builtin cd "$@" && ls
-# 	else
-# 		builtin cd ~ && ls
-# 	fi
-# }
-
-# Returns the last 2 fields of the working directory
-pwdtail() {
-    pwd|awk -F/ '{nlast = NF -1;print $nlast"/"$NF}'
-}
-
 # Show the current distribution
 distribution() {
     local dtype
@@ -410,66 +380,9 @@ ver() {
     fi
 }
 
-# Automatically install the needed support files for this .bashrc file
-install_bashrc_support() {
-    local dtype
-    dtype=$(distribution)
-
-    if [ $dtype == "redhat" ]; then
-	    sudo yum install multitail tree joe
-    elif [ $dtype == "suse" ]; then
-	    sudo zypper install multitail
-	    sudo zypper install tree
-	    sudo zypper install joe
-    elif [ $dtype == "debian" ]; then
-	    sudo apt-get install multitail tree joe
-    elif [ $dtype == "gentoo" ]; then
-	    sudo emerge multitail
-	    sudo emerge tree
-	    sudo emerge joe
-    elif [ $dtype == "mandriva" ]; then
-	    sudo urpmi multitail
-	    sudo urpmi tree
-	    sudo urpmi joe
-    elif [ $dtype == "slackware" ]; then
-	    echo "No install support for Slackware"
-    else
-	    echo "Unknown distribution"
-    fi
-}
-
-# Show current network information
-netinfo() {
-    echo "--------------- Network Information ---------------"
-    /sbin/ifconfig | awk /'inet addr/ {print $2}'
-    echo ""
-    /sbin/ifconfig | awk /'Bcast/ {print $3}'
-    echo ""
-    /sbin/ifconfig | awk /'inet addr/ {print $4}'
-
-    /sbin/ifconfig | awk /'HWaddr/ {print $4,$5}'
-    echo "---------------------------------------------------"
-}
-
-# IP address lookup
-alias whatismyip="whatsmyip"
-function whatsmyip() {
-    # Dumps a list of all IP addresses for every device
-    # /sbin/ifconfig |grep -B1 "inet addr" |awk '{ if ( $1 == "inet" ) { print $2 } else if ( $2 == "Link" ) { printf "%s:" ,$1 } }' |awk -F: '{ print $1 ": " $3 }';
-
-    # Internal IP Lookup
-    echo -n "Internal IP: " ; /sbin/ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}'
-
-    # External IP Lookup
-    echo -n "External IP: " ; wget http://smart-ip.net/myip -O - -q
-}
-
-# Trim leading and trailing spaces (for scripts)
-trim() {
-    local var=$@
-    var="${var#"${var%%[![:space:]]*}"}"  # remove leading whitespace characters
-    var="${var%"${var##*[![:space:]]}"}"  # remove trailing whitespace characters
-    echo -n "$var"
+# beyond compare function
+function c() {
+    bcompare $1 $2
 }
 
 #######################################################
@@ -493,6 +406,9 @@ function clone() {
     git clone git@github.com:cpp-rakesh/kattis.git
     git clone git@github.com:cpp-rakesh/codility.git
     git clone git@github.com:cpp-rakesh/code_wars.git
+    git clone git@github.com:cpp-rakesh/timus.git
+    git clone git@github.com:cpp-rakesh/atcoder.git
+    git clone git@github.com:cpp-rakesh/hacker_earth.git
 }
 
 function pull() {
@@ -554,6 +470,14 @@ function pull() {
 
     cd ~/git_hub/code_wars
     echo "***                 Code Wars                  ***"
+    git pull
+
+    cd ~/git_hub/atcoder
+    echo "***                  At Coder                  ***"
+    git pull
+
+    cd ~/git_hub/timus
+    echo "***                    Timus                   ***"
     git pull
 
     cd ~/git_hub
@@ -755,6 +679,12 @@ function friend_banner() {
     echo "Welcome Adwita Babu to our life !!!!!!!"
 }
 
+function python_init() {
+    export PATH=/home/rakesh/.local/bin:$PATH
+    source /home/rakesh/rakesh/rakesh_python_world/bin/activate
+}
+
 set_prompt
 git_config
+python_init
 friend_banner
