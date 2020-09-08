@@ -671,12 +671,14 @@ function set_prompt() {
     NewLine="\n"
     Jobs="\j"
 
-    export PS1="[$BBlue\d$Color_Off --> $BRed\u$Color_Off@$BBlack\w$Color_Off$BBlue\$(__git_ps1)$Color_Off]: "
+    export PS1="[$BBlue\d(\T)$Color_Off --> $BRed\u$Color_Off@$BBlack\w$Color_Off$BBlue\$(__git_ps1)$Color_Off] --> "
 }
 
 function friend_banner() {
+    echo "-------------------------------------------------------------"
     echo "For the love of Mathematics and Computer Science"
     echo "Welcome Adwita Babu to our life !!!!!!!"
+    echo "-------------------------------------------------------------"
 }
 
 function python_init() {
