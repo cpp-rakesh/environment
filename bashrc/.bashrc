@@ -391,24 +391,24 @@ function c() {
 #######################################################
 
 function clone() {
-    git clone git@github.com:cpp-rakesh/introduction_to_algorithms_CLRS.git
-    git clone git@github.com:cpp-rakesh/project_euler.git
-    git clone git@github.com:cpp-rakesh/discrete_mathematics_and_its_applications.git
-    git clone git@github.com:cpp-rakesh/leet_code.git
-    git clone git@github.com:cpp-rakesh/algorithms.git
-    git clone git@github.com:cpp-rakesh/hacker_rank.git
-    git clone git@github.com:cpp-rakesh/code_chef.git
-    git clone git@github.com:cpp-rakesh/top_coder.git
-    git clone git@github.com:cpp-rakesh/code_forces.git
-    git clone git@github.com:cpp-rakesh/utility.git
-    git clone git@github.com:cpp-rakesh/SPOJ.git
-    git clone git@github.com:cpp-rakesh/enviorenment.git
-    git clone git@github.com:cpp-rakesh/kattis.git
-    git clone git@github.com:cpp-rakesh/codility.git
-    git clone git@github.com:cpp-rakesh/code_wars.git
-    git clone git@github.com:cpp-rakesh/timus.git
-    git clone git@github.com:cpp-rakesh/atcoder.git
-    git clone git@github.com:cpp-rakesh/hacker_earth.git
+    git clone git@github.com:jigjnasu/introduction_to_algorithms_CLRS.git
+    git clone git@github.com:jigjnasu/project_euler.git
+    git clone git@github.com:jigjnasu/discrete_mathematics_and_its_applications.git
+    git clone git@github.com:jigjnasu/leet_code.git
+    git clone git@github.com:jigjnasu/algorithms.git
+    git clone git@github.com:jigjnasu/hacker_rank.git
+    git clone git@github.com:jigjnasu/code_chef.git
+    git clone git@github.com:jigjnasu/top_coder.git
+    git clone git@github.com:jigjnasu/code_forces.git
+    git clone git@github.com:jigjnasu/utility.git
+    git clone git@github.com:jigjnasu/SPOJ.git
+    git clone git@github.com:jigjnasu/enviorenment.git
+    git clone git@github.com:jigjnasu/kattis.git
+    git clone git@github.com:jigjnasu/codility.git
+    git clone git@github.com:jigjnasu/code_wars.git
+    git clone git@github.com:jigjnasu/timus.git
+    git clone git@github.com:jigjnasu/atcoder.git
+    git clone git@github.com:jigjnasu/hacker_earth.git
 }
 
 function pull() {
